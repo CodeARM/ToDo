@@ -38,6 +38,9 @@ def index(request):
         if form.is_valid():
             form.save()
         return redirect('/')
+        else:
+            print(form)
+            print (form.is_valid())
 
     context = {'tasks':tasks, 'form':form}
     return render(request, 'tasks/list.html', context)
